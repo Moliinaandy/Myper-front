@@ -3,7 +3,7 @@ defineProps({
   users: Array,
 })
 
-// Definimos los eventos que enviaremos al padre
+// Definimos los eventos
 const emit = defineEmits(['edit', 'delete'])
 </script>
 

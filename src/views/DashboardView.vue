@@ -5,7 +5,7 @@ import UserForm from '../components/UserForm.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 import BaseModal from '../components/BaseModal.vue'
 
-// --- ESTADO ---
+
 const users = ref([])
 const logs = ref([]) 
 const loading = ref(true)
@@ -17,7 +17,6 @@ const selectedUser = ref(null)
 const userToDeleteId = ref(null)
 const toast = ref({ show: false, message: '', type: 'success' })
 
-// --- COMPUTADAS ---
 const filteredUsers = computed(() => {
   if (!searchQuery.value) return users.value
   const query = searchQuery.value.toLowerCase()
@@ -27,7 +26,6 @@ const filteredUsers = computed(() => {
   )
 })
 
-// --- API FETCH (GET) ---
 const fetchUsers = async () => {
   loading.value = true
   try {

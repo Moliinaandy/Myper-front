@@ -8,7 +8,6 @@ const props = defineProps({
 
 const emit = defineEmits(['save', 'cancel'])
 
-// Datos locales del formulario
 const formData = ref({
   name: '',
   username: '',
@@ -16,12 +15,10 @@ const formData = ref({
   phone: ''
 })
 
-// Validación simple de email
 const isValidEmail = computed(() => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)
 })
 
-// Rellenar datos si estamos editando
 watch(() => props.user, (newUser) => {
   if (newUser) {
     formData.value = { ...newUser }
